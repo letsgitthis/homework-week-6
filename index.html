@@ -21,34 +21,79 @@
   </header>
 
 
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid col-lg-12">
+    <div class="row" id="main-row">
       <h5>Search City:</h5>
-      <div class="input">
-        <input id="searchCity" placeholder="Search City"
+      <div class="input-group mb-3">
+        <input id="searchCity" class="form-control mt-3" placeholder="Search City"
           class="input-group-append" />
         <button id="searchBtn"></button>
       </div>
     </div>
-
+    <div class="column col-sm -2"></div>
       <!-- Weather Card -->
-    <div>
-      <div>
-        <div id="currentCity"></div>
+    <div id="currentCity" class="column col-md-8">
+      <div class="row" id="sub-row-a">
+        <section class="column col-md-8">
+          <div class="city"></div>
+          <div class="wind"></div>
+          <div class="humidity"></div>
+          <div class="temp"></div>
+          <div class="tempF"></div>
+          <div class="uvIndex"></div>
+        </section>
       </div>
 
         <!-- History Card -->
-      <div>
+      <div class="card d-flex col-sm-3">
         <strong>Recent Searches</strong>
-        <ul id="cityList"></ul>
+        <ul id="cityList" class="list-group list-group-flush list"></ul>
       </div>
     </div>
   </div>
 
-      <!-- forecast -->
-    <div class="mt-4 col-md-12">
-      <h5 id="futureForecast"></h5>
-      <div id="forecast"></div>
+      <!-- future forecast -->
+    <div class="row" id="futureForecast" id="sub-row-c">
+      <h2>5 Day Weather Forecast</h2>
+    </div>
+    <div class="row" id="sub-row-b">
+      <div id="card" class="column col-md-2">
+        <div class="wind"></div>
+        <div class="humidity"></div>
+        <div class="temp"></div>
+        <div class="tempF"></div>
+      </div>
+    <!-- <div class="row" id="sub-row-b">
+      <div id="card1" class="column col-md-2">
+        <div class="wind0"></div>
+        <div class="humidity0"></div>
+        <div class="temp0"></div>
+        <div class="tempF0"></div>
+      </div>
+      <div id="card2" class="column col-md-2">
+        <div class="wind1"></div>
+        <div class="humidity1"></div>
+        <div class="temp1"></div>
+        <div class="tempF1"></div>
+      </div>
+      <div id="card3" class="column col-md-2">
+        <div class="wind2"></div>
+        <div class="humidity2"></div>
+        <div class="temp2"></div>
+        <div class="tempF2"></div>
+      </div>
+      <div id="card4" class="column col-md-2">
+        <div class="wind3"></div>
+        <div class="humidity3"></div>
+        <div class="temp3"></div>
+        <div class="tempF3"></div>
+      </div>
+      <div id="card5" class="column col-md-2">
+        <div class="wind4"></div>
+        <div class="humidity4"></div>
+        <div class="temp4"></div>
+        <div class="tempF4"></div>
+      </div> -->
     </div>
   </div>
 
