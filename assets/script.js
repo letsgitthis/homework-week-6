@@ -17,28 +17,20 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     //api key
-    const apiKey = "ca7d5beb3ae1753031e2f7307c9df1b8";
+    // const apiKey = "ca7d5beb3ae1753031e2f7307c9df1b8";
     let vLon = 0;
     let vLat = 0;
 
+    $(document).on("click", ".citybtn", function (event) {
+        searchOpenWeather($(this).val());
+    });
 
     let browserHistory = JSON.parse(window.localStorage.getItem("history")) || [];
     // store search history as array
     for (let i = 0; i < browserHistory.length; i++) {
         createButton(browserHistory[i]);
     }
-
-    $(document).on("click", ".citybtn", function (event) {
-        searchOpenWeather($(this).val());
-    });
-
-    $("#searchCity").keypress(function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            $("#searchBtn").click();
-        }
-    });
-
+   
     $("#searchBtn").on("click", function (event) {
         // Preventing the button from trying to submit the form
         event.preventDefault();
@@ -50,7 +42,14 @@ $(document).ready(function () {
         searchOpenWeather(weatherCity);
     });
 
-    $("#weather-input").keypress;
+    $("#searchCity").keypress;
+
+    $("#searchCity").keypress(function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#searchBtn").click();
+        }
+    });
 
     // correct this
     function createButton(city) {
@@ -105,7 +104,6 @@ $(document).ready(function () {
                 console.log("Temperature (F): " + tempF);
                 vLon = response.coord.lon;
                 vLat = response.coord.lat;
-                console.log(vLon, vLat);
                 searchOpenWeatherForecast(city);
                 return vLat, vLon;
             });
@@ -128,10 +126,6 @@ $(document).ready(function () {
         })
             // store data as response
             .then(function (response) {
-                // Log the queryURL
-                console.log(queryURL);
-                // Log the resulting object
-                console.log(response);
 
                 $; // push to HTML
                 for (let i = 0; i < 5; i++) {
@@ -153,10 +147,6 @@ $(document).ready(function () {
                 }
                 console.log(vLat, vLon);
                 searchOpenWeatherUV();
-                // Log the data in the console as well
-                console.log("Wind Speed: " + response.list[0].wind.speed);
-                console.log("Humidity: " + response.list[0].main.humidity);
-                console.log("Temperature (F): " + tempF);
             });
     }
     function searchOpenWeatherUV() {
