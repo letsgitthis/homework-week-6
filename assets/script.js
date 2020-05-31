@@ -11,11 +11,16 @@ $(document).ready(function () {
     
 });
 
+// const image = $("<img>").attr(
+//     "src",
+//     "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
+
 $(document).ready(function () {
     //api key
     const apiKey = "ca7d5beb3ae1753031e2f7307c9df1b8";
     let vLon = 0;
     let vLat = 0;
+
 
     let browserHistory = JSON.parse(window.localStorage.getItem("history")) || [];
     // store search history as array
