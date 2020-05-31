@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <title>Weather App</title>
-        <meta charset="utf-8">
-        <!-- need a different bootstrap -->
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
-        <link rel="stylesheet" type="text/css" href="./assets/CSS/style.css">
-    </head>
-    
-    <body>
-        <header>
-            <h1>Weather App</h1>
-            <h5>Week Forecast</h5>
-            <!-- bug causing moment.js to not display -->
-            <p id="currentDay"></p>
-        </header>
 
-        <div class="container">
-            <!-- Start row -->
-            <div class="row">
-                <!-- Start column -->
-                <embed class="embed">
-                <h5>Search for a city:</h5>
-        
-                <!-- input search -->
-                <div class="input">
-                    <input id="searchCity" type="text" placeholder="Search City" class="input" />
-                    <button id="searchBtn" class="btn"></button>
-                </div>
-            </div>
-        
-            <!-- Current Weather Card -->
-            <div class="currentWeather">
-            <div id="currentCity"></div>
-        
-                <!-- recent searches -->
-                <div class="card">
-                    <strong>Recent Search</strong>
-                    <ul id="searchedCities" class="searchedCities"></ul>
-                </div>
-            </div>
-            </div>
-        
-            <!-- forecast container -->
-            <div class="forecast">
-                <h5 id="futureForecast"></h5>
-                <div id="forecast"></div>
-            </div>
-        </div>
-    
-    <footer>
-        <p>Homework-week-6 | 2020</p>
-    </footer>
-        
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script type="javascript" src="assets/script.js"></script>
+<head>
+  <title>Weather Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="icon" href="./assets/images/rain.png">
+  <link rel="stylesheet" href="assets/CSS/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Weather Dashboard</h1>
+      <h4>5 Day Forecast</h4>
+      <p id="currentDay"></p>
+    </div>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <h5>Search City:</h5>
+      <div class="input">
+        <input id="searchCity" placeholder="Search City"
+          class="input-group-append" />
+        <button id="searchBtn"></button>
+      </div>
+    </div>
+
+      <!-- Weather Card -->
+    <div>
+      <div>
+        <div id="currentCity"></div>
+      </div>
+
+        <!-- History Card -->
+      <div>
+        <strong>Recent Searches</strong>
+        <ul id="cityList"></ul>
+      </div>
+    </div>
+  </div>
+
+      <!-- forecast -->
+    <div class="mt-4 col-md-12">
+      <h5 id="futureForecast"></h5>
+      <div id="forecast"></div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <p>JohnBentley | Homework-week-6 | 2020</p>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and 
+    <a href="https://www.flaticon.com/authors/bqlqn" title="bqlqn">bqlqn</a> from <a
+        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="assets/script.js"></script>
 </body>
 
 </html>
