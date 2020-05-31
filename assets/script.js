@@ -21,6 +21,10 @@ $(document).ready(function () {
     let vLon = 0;
     let vLat = 0;
 
+    $("#searchBtn").click(function (event) {
+        searchOpenWeather($(this).val());
+    });
+
     $(document).on("click", ".citybtn", function (event) {
         searchOpenWeather($(this).val());
     });
@@ -30,25 +34,20 @@ $(document).ready(function () {
     for (let i = 0; i < browserHistory.length; i++) {
         createButton(browserHistory[i]);
     }
-   
-    $("#searchBtn").on("click", function (event) {
-        // Preventing the button from trying to submit the form
-        event.preventDefault();
-        // Storing the city name
-        let weatherCity = $("#searchCity").val().trim();
-        console.log(weatherCity);
-        $("#searchCity").val("");
-        // Running the function(passing in the city as an argument)
-        searchOpenWeather(weatherCity);
-    });
-
-    $("#searchCity").keypress;
 
     $("#searchCity").keypress(function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();
             $("#searchBtn").click();
         }
+    });
+   
+    $("#searchBtn").on("click", function (event) {
+        event.preventDefault();
+        // Storing the city name
+        let weatherCity = $("#searchCity").val().trim();
+        $("#searchCity").val("");
+        searchOpenWeather(weatherCity);
     });
 
     // correct this
