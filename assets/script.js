@@ -27,6 +27,13 @@ $(document).ready(function () {
         searchOpenWeather($(this).val());
     });
 
+    $("#searchCity").keypress(function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#searchBtn").click();
+        }
+    });
+
     $("#searchBtn").on("click", function (event) {
         // Preventing the button from trying to submit the form
         event.preventDefault();
@@ -44,7 +51,7 @@ $(document).ready(function () {
     function createButton(city) {
         let newButton = $("<button>").addClass("btn citybtn").text(city);
         newButton.val(city);
-        $(".cityList").append(newButton);
+        $("#cityList").append(newButton);
     }
 
     function searchOpenWeather(city) {

@@ -39,7 +39,8 @@ header {
     background-position: center;
 }
 
-.card {
+#currentCity, #card1, #card2, 
+#card3, #card4, #card5, .card {
     background-color: purple;
 }
 
