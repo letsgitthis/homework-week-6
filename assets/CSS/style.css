@@ -43,6 +43,12 @@ header {
     background-color: purple;
 }
 
+#fiveDay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .forecast {
     display: flex;
     flex-direction: row space-between;
