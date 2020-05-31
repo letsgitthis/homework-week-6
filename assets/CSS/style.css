@@ -42,6 +42,8 @@ header {
 #currentCity, #card1, #card2, 
 #card3, #card4, #card5, .card {
     background-color: purple;
+    border-radius: 5px;
+    margin: 5px;
 }
 
 #fiveDay {
